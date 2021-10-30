@@ -18,8 +18,8 @@ int main()
 		}
 	}
 
-	// display original array
-	printf("The Array is :\n");
+	// display original matrix
+	printf("The Matrix is :\n");
 	for(i = 1; i <= m; i++)
 	{
 		for(j = 1; j <= n; j++)
@@ -29,8 +29,8 @@ int main()
 		printf("\n");
 	}
 
-	// display transpose of the array
-	printf("Transpose of the Array is :\n");
+	// display transpose of the matrix
+	printf("Transpose of the Matrix is :\n");
 	for(i = 1; i <= n; i++)
 	{
 		for(j = 1; j <= m; j++)

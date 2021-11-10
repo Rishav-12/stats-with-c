@@ -2,8 +2,8 @@
 
 int main()
 {
-	int i, j, k, n, flag = 0;
-	float a[5][5], b[5][5], sum;
+	int i, j, k, n, flag = 0, rank = 0;
+	float a[5][5], sum;
 	printf("Enter order of the matrix:\n");
 	scanf("%d", &n);
 
@@ -28,7 +28,12 @@ int main()
 			if(a[i][j] != sum)
 			{
 				flag = 1;
+				break;
 			}
+		}
+		if(flag == 1)
+		{
+			break;
 		}
 	}
 
@@ -39,5 +44,19 @@ int main()
 	else
 	{
 		printf("The matrix is idempotent\n");
+
+		// find the rank of the matrix
+
+		/*
+		the rank of an idempotent matrix is equal to its trace
+		the trace of a square matrix A is defined to be the sum of elements on the main diagonal
+		(from the upper left to the lower right) of A
+		*/
+
+		for(i = 1; i <= n; i++)
+		{
+			rank += a[i][i];
+		}
+		printf("The rank of the matrix = %d\n", rank);
 	}
 }

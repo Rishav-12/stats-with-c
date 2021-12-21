@@ -4,9 +4,10 @@ int main()
 {
 	int i, j, k, n, flag = 0, rank = 0;
 	float a[5][5], sum;
-	printf("Enter order of the matrix:\n");
+	printf("Enter order of the square matrix:\n");
 	scanf("%d", &n);
 
+	float b[n][n];
 	printf("Enter the elements of the matrix rowwise:\n");
 	for(i = 1; i <= n; i++)
 	{
@@ -25,15 +26,18 @@ int main()
 			{
 				sum += a[i][k]*a[k][j];
 			}
-			if(a[i][j] != sum)
+			b[i][j] = sum;
+		}
+	}
+
+	for(i = 1; i <= n; i++)
+	{
+		for(j = 1; j <= n; j++)
+		{
+			if(b[i][j] != a[i][j])
 			{
 				flag = 1;
-				break;
 			}
-		}
-		if(flag == 1)
-		{
-			break;
 		}
 	}
 
